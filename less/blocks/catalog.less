@@ -1,0 +1,17 @@
+.catalog {
+  width: 100%;
+
+  @media @tablet {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  @media @desktop {
+    justify-content: flex-start;
+    max-width: 1120px;
+  }
+}
