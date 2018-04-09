@@ -20,7 +20,7 @@ var run = require('gulp-run-sequence');
 var ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
-  return gulp.src('build/**/*')
+  return gulp.src('./build/**/*')
     .pipe(ghPages());
 });
 
