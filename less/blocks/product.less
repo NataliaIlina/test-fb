@@ -15,7 +15,7 @@
     &:hover,
     &:focus {
       .product__card {
-        border-color: @blue-hover;
+        background-image: linear-gradient(135deg, transparent 0, transparent 31px, @blue-hover 31px, @blue-hover 100%);
       }
 
       .product__weight {
@@ -29,20 +29,12 @@
           border-color: @blue-hover;
         }
       }
-
-      .product__header {
-        border-color: @blue-hover;
-
-        &::before {
-          background: linear-gradient(135deg, transparent 0, transparent 32px, @blue-hover 32px, @blue-hover 36.2px, @white-bg 36.2px, @white-bg 100%);
-        }
-      }
     }
   }
 
   &--selected {
     .product__card {
-      border-color: @pink;
+      background-image: linear-gradient(135deg, transparent 0, transparent 31px, @pink 31px, @pink 100%);
     }
 
     .product__weight {
@@ -52,20 +44,12 @@
     .product__promo {
       transform: translateX(-320px);
     }
-
-    .product__header {
-      border-color: @pink;
-
-      &::before {
-        background: linear-gradient(135deg, transparent 0, transparent 32px, @pink 32px, @pink 36.2px, @white-bg 36.2px, @white-bg 100%);
-      }
-    }
   }
 
   &--selected-hover {
     &:hover {
       .product__card {
-        border-color: @pink-hover;
+        background-image: linear-gradient(135deg, transparent 0, transparent 31px, @pink-hover 31px, @pink-hover 100%);
       }
 
       .product__weight {
@@ -76,13 +60,10 @@
         transform: translateX(-255px);
       }
 
-      .product__header {
-        border-color: @pink-hover;
-
-        &::before {
-          background: linear-gradient(135deg, transparent 0, transparent 32px, @pink-hover 32px, @pink-hover 36.2px, @white-bg 36.2px, @white-bg 100%);
-        }
+      .product__description--hover {
+        color: @pink-hover;
       }
+
     }
   }
 
@@ -95,8 +76,10 @@
 
     .product__card {
       color: @gray-disabled;
-      border-color: @gray-disabled;
+      background-image: linear-gradient(135deg, transparent 0, transparent 31px, @gray-disabled 31px, @gray-disabled 100%);
+    }
 
+    .product__inner {
       &::after {
         content: "";
         position: absolute;
@@ -122,14 +105,6 @@
       color: @yellow;
       transform: translateX(-640px);
     }
-
-    .product__header {
-      border-color: @gray-disabled;
-
-      &::before {
-        background: linear-gradient(135deg, transparent 0, transparent 32px, @gray-disabled 32px, @gray-disabled 36.2px, @white-bg 36.2px, @white-bg 100%);
-      }
-    }
   }
 
   @media @desktop {
@@ -140,50 +115,27 @@
   }
 }
 
-.product__header {
-  position: relative;
-  width: 275px;
-  height: 47px;
-  margin-bottom: -1px;
-  margin-left: 45px;
-  background-color: @white-bg;
-  border-top: 4px solid @blue;
-  border-right: 4px solid @blue;
-  border-top-right-radius: 10px;
-
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: -46px;
-    width: 47px;
-    height: 47px;
-    background: linear-gradient(135deg, transparent 0, transparent 32px, @blue 32px, @blue 36.2px, @white-bg 36.2px, @white-bg 100%);
-  }
-}
-
 .product__card {
   position: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 2;
   width: 100%;
-  min-height: 434px;
-  padding: 0;
-  padding-right: 12px;
-  padding-left: 45px;
-  background: @white-bg url("../img/cat.png") no-repeat center bottom -90px;
-  border: 4px solid @blue;
-  border-top: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  min-height: 480px;
+  padding: 4px;
+  background-image: linear-gradient(135deg, transparent 0, transparent 31px, @blue 31px, @blue 100%);
+  border-radius: 10px;
 }
 
 .product__inner {
-  z-index: 5;
-  padding-bottom: 180px;
-  margin-top: -26px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 2;
+  padding: 16px 12px 12px 43px;
+  background: url("../img/cat.png") no-repeat center bottom -90px,  linear-gradient(135deg, transparent 0, transparent 30px, @white-bg 30px, @white-bg 100%);
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -199,7 +151,7 @@
 }
 
 .product__description--hover {
-  color: @pink-hover;
+  color: transparent;
 }
 
 .product__title {
@@ -237,7 +189,6 @@
   padding-top: 23px;
   margin: 0;
   margin-top: auto;
-  margin-bottom: 12px;
   margin-left: auto;
   font-size: 42px;
   line-height: 22px;
